@@ -66,7 +66,12 @@ final public class Tester {
 			dim = openFile.nextInt();
 			int count = 0;
 			while(openFile.hasNextLine()){
-				
+				int x;
+				int y;
+				int[][] blank = new int[dim][dim];
+				if(openFile.hasNextInt()){
+					
+				}
 			}
 		}
 	}

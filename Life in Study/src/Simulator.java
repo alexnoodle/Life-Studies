@@ -130,10 +130,13 @@ public class Simulator {
 		for(int i = 0; i < mapProgress.size(); i++){
 			for(int j = 0; j < mapProgress.get(i).length; j ++){
 				for(int k = 0; k < mapProgress.get(i).length; k ++){
-					if(mapProgress.get(i)[j][k] == 1) writer.println(j + " " + k);
+					if(mapProgress.get(i)[j][k] == 1){
+						writer.println(j);
+						writer.println(k);
+					}
 				}
 			}
-			writer.println("done");
+			writer.println("-1");
 		}
 		writer.println("finished");
 		writer.close();
