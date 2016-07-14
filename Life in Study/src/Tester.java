@@ -16,7 +16,11 @@ final public class Tester {
 	private static int dim;
 
 	static ArrayList<int[][]> log = new ArrayList<int[][]>();
-
+	
+	public Tester(){
+		this.openMap();
+	}
+	
 	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
 		Simulator a = new Simulator();
 		log = a.run();
@@ -62,18 +66,31 @@ final public class Tester {
 	
 	public void openMap(){
 		try{
-			Scanner openFile = new Scanner((Readable) new File("SavedRun.txt"));
+			Scanner openFile = null;
+			openFile = new Scanner(new File("SavedRun.txt"));
 			dim = openFile.nextInt();
-			int count = 0;
+			int[][] blank = new int[dim][dim];
 			while(openFile.hasNextLine()){
 				int x;
 				int y;
-				int[][] blank = new int[dim][dim];
-				if(openFile.hasNextInt()){
-					
+				int next;
+				next = openFile.nextInt();
+				if(!(next == -1)){
+					x = next;
+					y = openFile.nextInt();
+					blank[x][y] = 1;
+				}
+				else{
+					log.add(blank);
+					blank = new int[dim][dim];
 				}
 			}
+			openFile.close();
 		}
+		catch(Exception e){
+			System.out.println("Opening didn't work");
+		}
+		this.go();
 	}
 
 	private void moveIt() {
