@@ -23,11 +23,14 @@ public class Simulator {
 
 	public Simulator() {
 		rootMap = new int[100][100];
-		rootMap[90][8] = 1;
-		rootMap[90][9] = 1;
-		rootMap[90][10] = 1;
-		rootMap[89][10] = 1;
-		rootMap[88][9] = 1;
+		rootMap[8][8] = 1;
+		rootMap[8][9] = 1;
+		rootMap[8][10] = 1;
+		rootMap[8][11] = 1;
+		rootMap[9][8] = 1;
+		rootMap[9][9] = 1;
+		rootMap[9][10] = 1;
+		rootMap[9][11] = 1;
 	}
 
 	public ArrayList<int[][]> run() throws FileNotFoundException, UnsupportedEncodingException {

@@ -18,13 +18,13 @@ final public class Tester {
 	static ArrayList<int[][]> log = new ArrayList<int[][]>();
 	
 	public Tester(){
-		this.openMap();
+		//this.openMap();
 	}
 	
 	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
 		Simulator a = new Simulator();
 		log = a.run();
-		dim = log.size();
+		dim = log.get(0).length;
 		new Tester().go();
 	}
 
@@ -98,7 +98,7 @@ final public class Tester {
 		for (oneX = 0; oneX < log.size(); oneX++) {
 
 			try {
-				Thread.sleep(100);
+				Thread.sleep(1000);
 			} catch (Exception exc) {
 			}
 			frame.repaint();
